@@ -1,0 +1,66 @@
+
+.policy-container{
+    padding: 3vw;
+}
+.policy-container .text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.16px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.policy-container a {
+    text-decoration: none;
+    color: #000;
+}
+
+.policy-container .email {
+    text-decoration: 2px underline #ffcc00;
+    font-weight: bold;
+}
+
+.policy-container .btn-div {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.policy-container .accept-btn {
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #000;
+    width: 100%;
+    max-width: 250px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 20px;
+    transition: 0.15s ease-in-out;
+}
+
+.policy-container .accept-btn:hover {
+    background-color: #000000e1;
+}
+
+@media screen and (min-width:768px) {
+    .text {
+        font-size: 20px;
+    }
+
+    .btn-div {
+        text-align: left;
+    }
+    .policy-container .btn-div{
+        justify-content: flex-start;
+    }
+}
+#policyDiv{
+    background-color: red !important;
+    width: 100vw;
+    padding: 20px;
+}

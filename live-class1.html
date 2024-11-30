@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="img/fav.webp" sizes="16x16" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/fav.webp">
+
+  <title>Buy Live Class</title>
+  <link rel="stylesheet" href="css/live-class.css" />
+  <style>
+
+    .container {
+        max-width: 400px;
+        margin: 20px;
+        padding: 20px;
+        /* Decreased padding */
+        background: #ffcc00;
+        /* Yellow background for the card */
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        /* Subtle shadow */
+        text-align: center;
+    }
+
+    .container h1 {
+        color: #343a40;
+        /* Dark gray for the title */
+    }
+
+    .container .qr-code img {
+        width: 95%;
+        border-radius: 10px;
+        /* Rounded corners for QR code */
+    }
+
+    .container .timer {
+        margin: 15px 0;
+        /* Decreased margin */
+        font-size: 18px;
+        color: #495057;
+        /* Dark gray for timer text */
+    }
+
+    .container .checkbox {
+        display: flex;
+        /* Flexbox for better alignment */
+        align-items: center;
+        /* Vertically center the checkbox */
+        justify-content: center;
+        /* Center horizontally */
+        margin: 15px 0;
+        /* Adjusted margin */
+    }
+
+    .container input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: #007BFF;
+        /* Custom color for the checkbox */
+        width: 20px;
+        /* Increased checkbox size */
+        height: 20px;
+        /* Increased checkbox size */
+    }
+
+    .container button {
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007BFF;
+        /* Bootstrap primary color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        /* Full width for the button */
+    }
+
+    .container button:hover {
+        background-color: #0056b3;
+        /* Darker blue on hover */
+    }
+
+    .container button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+
+<body>
+  <div class="page-wraper">
+    <div class="form-content">
+      <h1 class="mobile-course-main-heading main-heading">
+        JAVA DSA
+      </h1>
+      <h1 class="main-heading">Payment Details</h1>
+      <form id="coursePaymentFrom">
+        <div class="input">
+          <label for="name">Full Name</label>
+          <input type="text" name="NamePayment" id="name" placeholder="Enter Full Name" required />
+        </div>
+        <div class="input">
+          <label for="email">Email Address</label>
+          <input type="email" name="EmailPayment" id="email" placeholder="Enter Email Address" required />
+        </div>
+        <!-- <div class="input">
+          <label for="whatsappNumber">Whatsapp Number</label>
+          <input type="number" name="ContactPayment" id="whatsappNumber" placeholder="Enter Whatsapp Number" required />
+        </div> -->
+        <div class="input">
+          <label for="whatsappNumber">Whatsapp Number</label>
+          <div class="input-group">
+            <span class="country-code">+91</span>
+            <input type="text" name="ContactPayment" id="whatsappNumber" placeholder="Enter Whatsapp Number"
+              maxlength="10" required />
+          </div>
+          <span id="error-message" class="error-message"></span>
+        </div>
+
+        <div class="input">
+          <label for="cuponCode">Cupon Code</label>
+          <input type="text" id="cuponCode" placeholder="Enter Cupon Code" />
+          <p id="offerApplyMsg"></p>
+        </div>
+        <div>
+          <div class="price">
+            <span>Original Price</span>
+            <span>₹<span id="originalPrice"></span></span>
+          </div>
+          <div class="price">
+            <span>Cupon Discount</span>
+            <span>-₹<span id="discountPrice"></span></span>
+          </div>
+          <hr />
+          <div class="price total-price">
+            <span>Total</span>
+            <span>₹<span id="finalPrice"></span></span>
+          </div>
+        </div>
+        <button type="submit" class="payment-btn">
+          Pay ₹<span id="payPrice"></span>
+        </button>
+      </form>
+    </div>
+
+    <div class="course-detail">
+      <h1 class="main-heading">JAVA DSA</h1>
+      <img src="./img/javadsa.webp" alt="javadsa" class="course-image" />
+      <ul class="custom-list">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+            <path fill="#4caf50"
+              d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
+            </path>
+          </svg>
+          Live Interactive Sessions
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+            <path fill="#4caf50"
+              d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
+            </path>
+          </svg>
+          Hands-on Projects
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+            <path fill="#4caf50"
+              d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
+            </path>
+          </svg>
+          Personalized Mentorship
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+            <path fill="#4caf50"
+              d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
+            </path>
+          </svg>
+          Job-Ready Curriculum
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+            <path fill="#4caf50"
+              d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z">
+            </path>
+          </svg>
+          Lifetime Access & Support
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="qr-code-div d-none" id="qrCode">
+    <!-- <h1>Please make the payment using the QR code provided</h1>
+    <div class="pay">
+      <div class="qr-img">
+        <img src="./img/qr.webp" id="qrImg" alt="QR" />
+      </div>
+      <div class="upi-id">
+        <p>raikartik186-1@oksbi</p>
+      </div>
+      <div class="timer">
+        <p id="timerDiv">
+          <span id="minutes">5</span>:<span id="seconds">00</span>
+        </p>
+        <p id="timeOutMsg"></p>
+      </div>
+
+      <div class="paymentDone">
+        <div id="acceptCheckBox">
+          <input type="checkbox" id="accept" disabled />
+          <label for="accept">Are you done your Payment</label>
+        </div>
+        <a href="https://chat.whatsapp.com/IrpuV62roTxGwMf1HUyKV5">
+          <button id="proceedBtn" disabled>Proceed</button>
+        </a>
+      </div>
+    </div> -->
+    <div class="container">
+      <p>Scan the QR code to make your payment.</p>
+      <div class="qr-code">
+        <img id="qrImg" src="" alt="QR Code">
+        <p>raikartik186-1@oksbi</p>
+      </div>
+      <div class="timer">
+        <p>Time Remaining: <span id="countdown">60</span> seconds</p>
+      </div>
+      <div class="checkbox">
+        <!-- <input type="checkbox" id="agreementCheckbox"> -->
+        <input type="checkbox" id="accept"  />
+        <label for="agreementCheckbox">I agree to the terms and conditions</label>
+      </div>
+      <!-- <button id="proceedBtn" disabled>Pay Now</button> -->
+      <a href="https://chat.whatsapp.com/JdLEeizN3OnBmq8iOT9wI1">
+        <button id="proceedBtn" disabled>Proceed</button>
+      </a>
+    </div>
+  </div>
+
+  <script src="./js/live-class1.js"></script>
+  <script src="./js/inspect-off.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const mobileRegex = /^\d{10}$/;
+
+    const paymentFormValidation =
+      document.getElementById("coursePaymentFrom");
+    const paymentFormValidationName =
+      paymentFormValidation.elements["NamePayment"];
+    const paymentFormValidationEmail =
+      paymentFormValidation.elements["EmailPayment"];
+    const paymentFormValidationNumber =
+      paymentFormValidation.elements["ContactPayment"];
+    let paymentSubmit = false;
+    paymentFormValidationName.addEventListener("keyup", function () {
+      if (!nameRegex.test(paymentFormValidationName.value)) {
+        paymentFormValidationName.classList.add("inputError");
+        paymentSubmit = false;
+      } else {
+        paymentFormValidationName.classList.remove("inputError");
+        paymentSubmit = true;
+      }
+    });
+    paymentFormValidationEmail.addEventListener("keyup", function () {
+      if (!emailRegex.test(paymentFormValidationEmail.value)) {
+        paymentFormValidationEmail.classList.add("inputError");
+        paymentSubmit = false;
+      } else {
+        paymentFormValidationEmail.classList.remove("inputError");
+        paymentSubmit = true;
+      }
+    });
+    paymentFormValidationNumber.addEventListener("keyup", function () {
+      if (!mobileRegex.test(paymentFormValidationNumber.value)) {
+        paymentFormValidationNumber.classList.add("inputError");
+        paymentSubmit = false;
+      } else {
+        paymentFormValidationNumber.classList.remove("inputError");
+        paymentSubmit = true;
+      }
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $("#coursePaymentFrom").on("submit", function (e) {
+        e.preventDefault();
+        if (paymentSubmit) {
+          $.ajax({
+            type: "POST",
+            url: "php/liveClass.php",
+            data: $(this).serialize(),
+            success: function (response) {
+              if (response === "ok") {
+                $("#qrCode").toggleClass("d-none");
+                startPaymentTimer();
+                $("#coursePaymentForm")[0].reset();
+              }
+            },
+            error: function (xhr, status, error) {
+              
+              alert("An error occurred: " + xhr.responseText);
+            },
+          });
+        }
+      });
+    });
+  </script>
+
+  <script>
+    const whatsappNumberInput = document.getElementById('whatsappNumber');
+    const errorMessage = document.getElementById('error-message');
+
+    // Validate number input using regex for 10 digits
+    whatsappNumberInput.addEventListener('input', function () {
+      const regex = /^[0-9]{0,10}$/;  // Allow only 0-10 digits
+      const inputVal = this.value;
+
+      if (!regex.test(inputVal)) {
+        this.value = inputVal.slice(0, 10);  // Limit to 10 digits
+      }
+
+      // Show an error message if the length exceeds 10 digits
+      if (this.value.length !== 10 && this.value.length > 0) {
+        errorMessage.textContent = 'Please enter a valid 10-digit number.';
+      } else {
+        errorMessage.textContent = '';  // Clear error message
+      }
+    });
+
+    // Restrict non-numeric characters
+    whatsappNumberInput.addEventListener('keypress', function (e) {
+      if (e.key < '0' || e.key > '9') {
+        e.preventDefault();  // Prevent entering non-numeric characters
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>
